@@ -6,11 +6,12 @@ import { file, glob } from "astro/loaders";
 
 // 3. Define your collection(s)
 const blog = defineCollection({
-	loader: glob({ pattern: "**/*.mdx", base: "../article" }),
+	loader: glob({ pattern: "**/*.mdx", base: "./article" }),
 	schema: z.object({
 		title: z.string(),
-		date: z.string.date(),
+		date: z.string().date(),
 		tag: z.array(z.string()),
+		updatedAt: z.string().date().optional(),
 	}),
 });
 
