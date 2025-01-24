@@ -11,5 +11,10 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [mdx(), sitemap(), tailwind({applyBaseStyles: false}), icon()],
+	integrations: [
+		mdx(),
+		sitemap(),
+		tailwind({ applyBaseStyles: false }),
+		icon(),
+	],
 });
