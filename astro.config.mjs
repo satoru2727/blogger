@@ -13,11 +13,11 @@ import playformCompress from "@playform/compress";
 
 // https://astro.build/config
 export default defineConfig({
-    integrations: [
-      mdx(),
-      sitemap(),
-      tailwind({ applyBaseStyles: false }),
-      icon(),
-      playformCompress(),
-    ],
+	integrations: [
+		mdx(),
+		sitemap(),
+		tailwind({ applyBaseStyles: false }),
+		icon(),
+		playformCompress(),
+	],
 });
