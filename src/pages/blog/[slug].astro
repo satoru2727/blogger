@@ -14,7 +14,7 @@ const meta = `<title>${post.data.title}</title>`;
 const { Content } = await render(post);
 const DatetoString = (stdate) => {
 	const date = new Date(stdate);
-	`${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
+	return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
 };
 import tocbot from "tocbot";
 ---
