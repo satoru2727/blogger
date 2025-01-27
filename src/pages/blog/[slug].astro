@@ -1,5 +1,7 @@
 ---
 import { render,getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
 export async function getStaticPaths() {
 	const allBlogPosts = await getCollection("blog");
 	return allBlogPosts.map((post) => ({
