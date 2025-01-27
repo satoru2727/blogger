@@ -18,11 +18,11 @@ const DatetoString = (stdate) => {
 };
 import tocbot from "tocbot";
 ---
-<Layout>
-	<Header meta={meta} />
+<Layout meta={meta}>
+	<Header/>
 	<main>
 		<h1 class="text-center text-2xl md:text-4xl font-bold">{post.data.title}</h1>
-		<div class="text-sm text-gray-500 flex mx-auto justify-center">
+		<div class="text-sm flex mx-auto justify-center">
 			<div class="mx-2">
 				<span class="block text-blue-haze-400">Published</span>
 				<span class="block">{DatetoString(post.data.publishedAt)}</span>
