@@ -12,8 +12,10 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const meta = `<title>${post.data.title}</title>`;
 const { Content } = await render(post);
-const DatetoString = (date) =>
-	`{date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
+const DatetoString = (stdate) => {
+	const date = new Date(stdate);
+	`${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
+};
 import tocbot from "tocbot";
 ---
 <Layout>
@@ -25,12 +27,12 @@ import tocbot from "tocbot";
 				<span class="block">Published</span>
 				<span class="block">{DatetoString(post.data.publishedAt)}</span>
 			</div>
-			{post.data.updatedAt ?? (
-				<div>
-				<span class="block">Updated</span>
-				<span class="block">{DatetoString(post.data.updatedAt)}</span>
-				</div>
-				)}
+			{post.data.updatedAt && (
+    <div>
+        <span class="block">Updated</span>
+        <span class="block">{DatetoString(post.data.updatedAt)}</span>
+    </div>
+)}
 			<div>
 			</div>
 		</div>
