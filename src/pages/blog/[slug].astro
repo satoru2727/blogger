@@ -21,30 +21,29 @@ import tocbot from "tocbot";
 <Layout>
 	<Header meta={meta} />
 	<main>
-		<h1 class="text-2xl md:text-4xl font-bold">{post.data.title}</h1>
-		<div class="text-sm text-gray-500 flex">
-			<div>
+		<h1 class="text-center text-2xl md:text-4xl font-bold">{post.data.title}</h1>
+		<div class="text-sm text-gray-500 flex mx-auto justify-center">
+			<div class="mx-2">
 				<span class="block">Published</span>
 				<span class="block">{DatetoString(post.data.publishedAt)}</span>
 			</div>
 			{post.data.updatedAt && (
-    <div>
-        <span class="block">Updated</span>
-        <span class="block">{DatetoString(post.data.updatedAt)}</span>
-    </div>
-)}
-			<div>
+			<div class="mx-2">
+        		<span class="block">Updated</span>
+        		<span class="block">{DatetoString(post.data.updatedAt)}</span>
+    			</div>
+				)}
+			<div class="mx-2">
 				{post.data.tag.map((tag) => (
 				<span class="bg-gray-100 text-gray-800 me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-300">#{tag}</span>
 				))}
 			</div>
 		</div>
-		<div class="flex flex-wrap w-full">
-			<div class="js-toc w-full lg:w-1/4">
-				</div>
+		<div class="flex flex-col lg:flex-row w-full">
 				<article class="prose w-full lg:w-3/4 js-toc-content">
 				<Content />
 				</article>
+				<div class="js-toc w-full lg:w-1/4"></div>
 		</div>
 <script>
 	import * as tocbot from 'tocbot'
