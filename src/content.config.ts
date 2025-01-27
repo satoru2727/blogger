@@ -9,18 +9,18 @@ const blog = defineCollection({
 	loader: glob({ pattern: "**/*.mdx", base: "./article/blog" }),
 	schema: z.object({
 		title: z.string(),
-		publishedAt: z.string().date(),
+		publishedAt: z.date(),
 		tag: z.array(z.string()),
-		updatedAt: z.string().date().optional(),
+		updatedAt: z.date().optional(),
 	}),
 });
 const philosophy = defineCollection({
 	loader: glob({ pattern: "**/*.mdx", base: "./article/philosophy" }),
 	schema: z.object({
 		title: z.string(),
-		publishedAt: z.string().date(),
+		publishedAt: z.date(),
 		tag: z.array(z.string()),
-		updatedAt: z.string().date().optional(),
+		updatedAt: z.date().optional(),
 	}),
 });
-export const collections = { blog };
+export const collections = { blog, philosophy };
