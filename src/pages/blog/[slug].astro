@@ -1,7 +1,7 @@
 ---
 import { render,getCollection } from "astro:content";
-import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/Header.astro";
 export async function getStaticPaths() {
 	const allBlogPosts = await getCollection("blog");
 	return allBlogPosts.map((post) => ({
@@ -28,6 +28,8 @@ const { Content } = await render(post);
 				<span class="block">{post.data.updatedAt}</span>
 				</div>
 				)}
+			<div>
+			</div>
 		</div>
 		<article class="prose">
 		<Content />
