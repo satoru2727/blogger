@@ -1,4 +1,4 @@
-/*@import "tailwindcss";*/
+@import "tailwindcss";
 @theme {
 	--font-text: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
 		"Hiragino Sans", "BIZ UDPGothic", Meiryo, sans-serif;
