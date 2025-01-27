@@ -2,11 +2,32 @@
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const meta = "<title>satoru.work</title>";
 ---
-
-<Layout>
+<Layout meta={meta}>
 	<Header />
+	<main class="flex flex-col md:flex-row justify-center mx-auto pt-64 px-12 md:px-24">
+		<div class="flex flex-col item-center">
+			<nav>
+				<ul class="flex flex-col">
+					<li class="md:mr-4">
+						<a href="/" class="text-2xl">Home</a>
+					</li>
+					<li class="md:mr-4">
+						<a href="/about" class="text-2xl">About</a>
+					</li>
+					<li class="md:mr-4">
+						<a href="/blog" class="text-2xl">Blog</a>
+					</li>
+					<li class="md:mr-4">
+					<a href="/philosophy" class="text-2xl">Philosophy</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<div>
+			<h1 class="text-4xl font-bold">satoru.work</h1>
+		</div>
+	</main>
 	<Footer />
 </Layout>
