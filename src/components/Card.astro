@@ -1,0 +1,22 @@
+---
+import Icon from "astro-icon/Component";
+const { title, date, slug, tags, base } = Astro.props;
+const tagList = tags.slice(0, 3);
+---
+<div class="card">
+	<a href={base + slug} class="text-blue-haze-500 text-4xl">{title}</a>
+  <div class="flex flex-row text-white-rock-300 text-xl">
+    <Icon name="ic:baseline-calendar-month" />
+    <span>{date}</span>
+	{tagList.length > 0 && (
+		<div class="flex flex-row">
+			{tagList.map((tag) => (
+				<div class="flex flex-row">
+					<Icon name="ic:baseline-label" />
+					<span>{tag}</span>
+				</div>
+			))}
+		</div>
+	)}
+  </div>
+	</div>
