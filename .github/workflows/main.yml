@@ -18,5 +18,3 @@ jobs:
 
       - name: Run Biome
         run: biome ci ./src
-
-      - uses: stefanzweifel/git-auto-commit-action@v5
