@@ -7,7 +7,7 @@
 		"build": "astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-		"biome": "biome check --write ./src"
+		"norika": "biome check --write ./src"
 	},
 	"dependencies": {
 		"@astrojs/mdx": "^4.0.7",

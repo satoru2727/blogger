@@ -1,12 +1,12 @@
 ---
+import { getCollection } from "astro:content";
+import Card from "../components/Card.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
-import {getCollection} from "astro:content";
-import Card from "../components/Card.astro";
 const meta = "<title>satoru.work</title>";
-const allBlogPosts = await getCollection('blog')
-const allPhilosophyPosts = await getCollection('philosophy')
+const allBlogPosts = await getCollection("blog");
+const allPhilosophyPosts = await getCollection("philosophy");
 ---
 <Layout meta={meta}>
 	<Header />
