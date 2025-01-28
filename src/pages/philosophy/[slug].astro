@@ -3,7 +3,7 @@ import { getCollection, render } from "astro:content";
 import Header from "../../components/Header.astro";
 import Layout from "../../layouts/Layout.astro";
 export async function getStaticPaths() {
-	const allBlogPosts = await getCollection("blog");
+	const allBlogPosts = await getCollection("philosophy");
 	return allBlogPosts.map((post) => ({
 		params: { slug: post.id },
 		props: { post },
@@ -35,7 +35,7 @@ import tocbot from "tocbot";
 				)}
 			<div class="mx-2">
 				{post.data.tag.map((tag) => (
-				<a href={"/blog/"+ tag} class="text-blue-haze-400 me-2 px-2.5 py-0.5 rounded-full">#{tag}</a>
+				<a href={"/philosophy/"+tag} class="text-blue-haze-400 me-2 px-2.5 py-0.5 rounded-full">#{tag}</a>
 				))}
 			</div>
 		</div>
