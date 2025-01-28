@@ -2,11 +2,16 @@
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
+import {getCollection} from "astro:content";
+import Card from "../components/Card.astro";
 const meta = "<title>satoru.work</title>";
+const allBlogPosts = await getCollection('blog')
+const allPhilosophyPosts = await getCollection('philosophy')
 ---
 <Layout meta={meta}>
 	<Header />
-	<main class="flex flex-col md:flex-row justify-center mx-auto pt-2 px-2 md:px-6">
+	<main>
+	<div class="flex flex-col md:flex-row justify-center mx-auto pt-2 px-2 md:px-6">
 		<div>
 			<h1 class="text-4xl md:text-6xl font-bold">satoru.work</h1>
 		</div>
@@ -28,6 +33,18 @@ const meta = "<title>satoru.work</title>";
 				</ul>
 			</nav>
 		</div>
+	</div>
+	<h2>Blog</h2>
+	<ul>
+		{allBlogPosts.map((post) => (
+		<li><Card title={post.data.title} date={post.data.updatedAt ?? post.data.publishedAt} base="/blog" tags={post.data.tag} /></li>
+		))}
+	</ul>
+	<h2>Philosophy</h2>
+	<ul>
+		{allPhilosophyPosts.map((post) => (
+		<li><Card title={post.data.title} date={post.data.updatedAt ?? post.data.publishedAt} base="/philosophy" tags={post.data.tag} /></li>
+		))}
 	</main>
 	<Footer />
 </Layout>
