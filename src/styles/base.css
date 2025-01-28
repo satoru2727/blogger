@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @theme {
-	--font-text: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
-		"Hiragino Sans", "BIZ UDPGothic", Meiryo, sans-serif;
+	--font-lacan: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", Meiryo, sans-serif;
 	--color-white-rock-50: #f7f6ef;
 	--color-white-rock-100: #e2e0c8;
 	--color-white-rock-200: #d7d2b1;
@@ -25,3 +24,39 @@
 	--color-blue-haze-900: #4e4a65;
 	--color-blue-haze-950: #2e2b3b;
 }
+body {
+	@apply font-lacan bg-white-rock-50;
+}
+.prose {
+	h1 {
+        @apply text-3xl font-bold;
+}
+h2 {
+        @apply text-2xl font-bold;
+}
+h3 {
+        @apply text-xl font-bold;
+}
+p {
+        @apply text-base;
+}
+a {
+        @apply text-blue-haze-500;
+}
+a:hover {
+        @apply text-blue-haze-700;
+}
+cite {
+        @apply text-sm indent-2;
+}
+blockquote {
+        @apply border-l-4 border-blue-haze-500 pl-2 my-4;
+}
+ul {
+        @apply list-disc list-inside;
+}
+ol {
+        @apply list-decimal list-inside;
+}
+}
+
