@@ -17,6 +17,6 @@ jobs:
         uses: biomejs/setup-biome@v2
 
       - name: Run Biome
-        run: biome ci ./src --write
+        run: biome ci ./src
 
       - uses: stefanzweifel/git-auto-commit-action@v5
