@@ -2,12 +2,16 @@
 import {Icon} from "astro-icon/components";
 const { title, date, slug, tags, base } = Astro.props;
 const tagList = tags.slice(0, 3);
+const DatetoString = (stdate) => {
+        const date = new Date(stdate);
+        return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
+const DateString = DatetoString(date);
 ---
 <div class="card">
 	<a href={base +"/" + slug} class="text-blue-haze-500 text-4xl">{title}</a>
   <div class="flex flex-row text-white-rock-300 text-xl">
     <Icon name="ic:baseline-calendar-month" />
-    <span>{date}</span>
+    <span>{DateString}</span>
 	{tagList.length > 0 && (
 		<div class="flex flex-row">
 			{tagList.map((tag) => (
