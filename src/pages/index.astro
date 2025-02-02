@@ -7,10 +7,6 @@ import Layout from "../layouts/Layout.astro";
 const meta = "<title>satoru.work</title>";
 const allBlogPosts = await getCollection("blog");
 const allPhilosophyPosts = await getCollection("philosophy");
-const DatetoString = (stdate) => {
-	const date = new Date(stdate);
-	return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
-};
 ---
 <Layout meta={meta}>
 	<Header />
@@ -41,13 +37,13 @@ const DatetoString = (stdate) => {
 	<h2>Blog</h2>
 	<ul>
 		{allBlogPosts.map((post) => (
-		<li><Card title={post.data.title} date={DatetoString(post.data.updatedAt ?? post.data.publishedAt)} base="/blog" tags={post.data.tag} /></li>
+		<li><Card title={post.data.title} date={post.data.updatedAt ?? post.data.publishedAt} base="/blog" tags={post.data.tag} /></li>
 		))}
 	</ul>
 	<h2>Philosophy</h2>
 	<ul>
 		{allPhilosophyPosts.map((post) => (
-		<li><Card title={post.data.title} date={DatetoString(post.data.updatedAt ?? post.data.publishedAt)} base="/philosophy" tags={post.data.tag} /></li>
+		<li><Card title={post.data.title} date={post.data.updatedAt ?? post.data.publishedAt} base="/philosophy" tags={post.data.tag} /></li>
 		))}
 	</main>
 	<Footer />
