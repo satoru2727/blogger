@@ -10,7 +10,7 @@
 	--color-text-dark:"#E8EAED";
 }
 body {
-	@apply font-main bg-white-rock-50;
+	@apply font-main bg-bg dark:bg-bg-dark;
 }
 .prose {
 	h1 {
@@ -26,16 +26,16 @@ body {
 		@apply text-base;
 	}
 	a {
-		@apply text-blue-haze-500;
+		@apply text-primary;
 	}
 	a:hover {
-		@apply text-blue-haze-700;
+		@apply text-blue-300;
 	}
 	cite {
 		@apply text-sm indent-2;
 	}
 	blockquote {
-		@apply border-l-4 border-blue-haze-500 pl-2 my-4;
+		@apply border-l-4 border-secondary pl-2 my-4;
 	}
 	ul {
 		@apply list-disc list-inside;
