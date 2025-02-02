@@ -9,15 +9,15 @@ const DatetoString = (stdate) => {
 const DateString = DatetoString(date);
 ---
 <div class="card">
-	<a href={base +"/" + slug} class="text-blue-haze-500 text-4xl">{title}</a>
+	<a href={base +"/" + slug} class="text-4xl border-b border-primary">{title}</a>
   <div class="flex flex-row text-white-rock-300 text-xl">
-    <Icon name="ic:baseline-calendar-month" />
+    <Icon name="ic:baseline-calendar-month w-max p-0 mb-0 color-secondary" />
     <span>{DateString}</span>
 	{tagList.length > 0 && (
 		<div class="flex flex-row">
 			{tagList.map((tag) => (
 				<div class="flex flex-row">
-					<Icon name="ic:baseline-label" />
+					<Icon name="ic:baseline-label" class="w-max p-0 mb-0 color-secondary" />
 					<a href={`${base}/${tag}`}>{tag}</span>
 				</div>
 			))}
