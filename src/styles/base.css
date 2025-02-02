@@ -8,7 +8,7 @@
 	--color-bg-dark: "#171920";
 }
 body {
-	@apply font-lacan bg-white-rock-50;
+	@apply font-main bg-white-rock-50;
 }
 .prose {
 	h1 {
