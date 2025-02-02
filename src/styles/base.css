@@ -3,9 +3,9 @@
 	--font-main: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
 		"Hiragino Sans", "BIZ UDPGothic", Meiryo, sans-serif;
 	--color-primary: "#4559A3";
-	--color-secondary:"#A38F45";
-	--color-bg:"#F4F5F7";
-	--color-bg-dark:"#171920";
+	--color-secondary: "#A38F45";
+	--color-bg: "#F4F5F7";
+	--color-bg-dark: "#171920";
 }
 body {
 	@apply font-lacan bg-white-rock-50;
