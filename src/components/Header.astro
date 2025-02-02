@@ -1,11 +1,13 @@
 ---
 import { Icon } from "astro-icon/components";
+import { DarkMode } from 'accessible-astro-components'
 ---
 <header>
     <div class="flex justify-between items-center h-16 px-4">
         <a href="/" class="text-4xl font-bold">satoru.work</a>
         <div class="flex items-center">
             <Icon class="h-8 w-8" name="ic:baseline-search" />
+	    <DarkMode class="h-8 w-8" />
         </div>
     </div>
 </header>
