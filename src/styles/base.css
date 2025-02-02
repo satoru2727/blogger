@@ -1,29 +1,11 @@
 @import "tailwindcss";
 @theme {
-	--font-lacan: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+	--font-main: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
 		"Hiragino Sans", "BIZ UDPGothic", Meiryo, sans-serif;
-	--color-white-rock-50: #f7f6ef;
-	--color-white-rock-100: #e2e0c8;
-	--color-white-rock-200: #d7d2b1;
-	--color-white-rock-300: #bfb685;
-	--color-white-rock-400: #ac9e63;
-	--color-white-rock-500: #9d8d55;
-	--color-white-rock-600: #877347;
-	--color-white-rock-700: #6d583b;
-	--color-white-rock-800: #5d4b36;
-	--color-white-rock-900: #514132;
-	--color-white-rock-950: #2e231a;
-	--color-blue-haze-50: #f4f5f9;
-	--color-blue-haze-100: #eaecf5;
-	--color-blue-haze-200: #d9dbec;
-	--color-blue-haze-300: #c8cae2;
-	--color-blue-haze-400: #aaa9d0;
-	--color-blue-haze-500: #9693c1;
-	--color-blue-haze-600: #837bb0;
-	--color-blue-haze-700: #716999;
-	--color-blue-haze-800: #5d567d;
-	--color-blue-haze-900: #4e4a65;
-	--color-blue-haze-950: #2e2b3b;
+	--color-primary: "#4559A3";
+	--color-secondary:"#A38F45";
+	--color-bg:"#F4F5F7";
+	--color-bg-dark:"#171920";
 }
 body {
 	@apply font-lacan bg-white-rock-50;

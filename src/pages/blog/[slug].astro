@@ -24,26 +24,26 @@ import tocbot from "tocbot";
 		<h1 class="text-center text-2xl md:text-4xl font-bold">{post.data.title}</h1>
 		<div class="text-sm flex mx-auto justify-center">
 			<div class="mx-2">
-				<span class="block text-blue-haze-400">Published</span>
+				<span class="block me-2 px-2.5 py-0.5 rounded-full text-white bg-primary">Published</span>
 				<span class="block">{DatetoString(post.data.publishedAt)}</span>
 			</div>
 			{post.data.updatedAt && (
 			<div class="mx-2">
-        		<span class="block text-blue-haze-400">Updated</span>
+        		<span class="block me-2 px-2.5 py-0.5 rounded-full text-white bg-primary">Updated</span>
         		<span class="block">{DatetoString(post.data.updatedAt)}</span>
     			</div>
 				)}
 			<div class="mx-2">
 				{post.data.tag.map((tag) => (
-				<a href={"/blog/tags/"+ tag} class="text-blue-haze-400 me-2 px-2.5 py-0.5 rounded-full">#{tag}</a>
+				<a href={"/blog/tags/"+ tag} class="text-primary me-2 px-2.5 py-0.5 rounded-full">#{tag}</a>
 				))}
 			</div>
 		</div>
-		<div class="flex flex-col lg:flex-row w-full">
-				<article id="main-content" class="prose w-full lg:w-3/4 js-toc-content">
+		<div class="flex flex-col lg:flex-row-reverse w-full">
+				<div class="js-toc w-full lg:w-1/4"></div>
+				<article id="main-content" class="prose w-full lg:w-4/5 js-toc-content mx-auto px-2">
 				<Content />
 				</article>
-				<div class="js-toc w-full lg:w-1/4"></div>
 		</div>
 <script>
 	import * as tocbot from 'tocbot'
