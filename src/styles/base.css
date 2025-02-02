@@ -6,6 +6,8 @@
 	--color-secondary: "#A38F45";
 	--color-bg: "#F4F5F7";
 	--color-bg-dark: "#171920";
+	--color-text:"#0f1419";
+	--color-text-dark:"#E8EAED";
 }
 body {
 	@apply font-main bg-white-rock-50;
