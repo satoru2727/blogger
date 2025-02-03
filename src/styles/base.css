@@ -3,6 +3,7 @@
 @theme {
 	--font-main: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
 		"Hiragino Sans", "BIZ UDPGothic", Meiryo, sans-serif;
+	--color-*: initial;
 	--color-primary: "#4559A3";
 	--color-secondary: "#A38F45";
 	--color-bg: "#F4F5F7";
@@ -30,7 +31,7 @@ body {
 		@apply text-primary;
 	}
 	a:hover {
-		@apply text-blue-300;
+		@apply text-primary;
 	}
 	cite {
 		@apply text-sm indent-2;
