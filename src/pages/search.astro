@@ -11,7 +11,7 @@ import Header from "../components/Header.astro";
 <div class="search"></div>
 <Footer />
 <style is:global>
-	body.darkmode {
+	.darkmode {
 		--pagefind-ui-primary: var(--color-primary);
 		--pagefind-ui-text: var(--color-text-dark);
 		--pagefind-ui-background: var(--color-background-dark);
@@ -21,7 +21,7 @@ import Header from "../components/Header.astro";
   --pagefind-ui-border-radius: 4px;
   --pagefind-ui-image-border-radius: 4px;
 	}
-	body {
+	:root {
 	--pagefind-ui-primary: var(--color-primary);
 	--pagefind-ui-text: var(--color-text);
 	--pagefind-ui-background: var(--color-background);
