@@ -12,7 +12,7 @@
 	--color-text-dark:#E8EAED;
 }
 body {
-	@apply font-main bg-bg dark:bg-bg-dark;
+	@apply font-main bg-back dark:bg-back-dark;
 }
 .prose {
 	h1 {
