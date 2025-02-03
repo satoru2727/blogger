@@ -1,5 +1,38 @@
 ---
-import Search from "astro-pagefind/components/Search";
+import "@pagefind/default-ui/css/ui.css";
 import "../styles/base.css";
 ---
-<Search id="search" className="pagefind-ui" />
+<div class="search"></div>
+<style>
+	body.dark {
+		--pagefind-ui-primary: var(--color-primary);
+		--pagefind-ui-text: var(--color-text-dark);
+		--pagefind-ui-background: var(--color-background-dark);
+  --pagefind-ui-border: #DEE2E6;
+  --pagefind-ui-tag: #DEE2E6;
+  --pagefind-ui-border-width: 2px;
+  --pagefind-ui-border-radius: 4px;
+  --pagefind-ui-image-border-radius: 4px;
+	}
+	body {
+	--pagefind-ui-primary: var(--color-primary);
+	--pagefind-ui-text: var(--color-text);
+	--pagefind-ui-background: var(--color-background);
+  --pagefind-ui-border: #DEE2E6;
+  --pagefind-ui-tag: #DEE2E6;
+  --pagefind-ui-border-width: 2px;
+  --pagefind-ui-border-radius: 4px;
+  --pagefind-ui-image-border-radius: 4px;
+
+
+
+	}
+</style>
+	<script>
+  import { PagefindUI } from "@pagefind/default-ui";
+
+  new PagefindUI({
+    element: ".search",
+	  showImages: false
+  });
+</script>
