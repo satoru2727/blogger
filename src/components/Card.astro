@@ -9,8 +9,8 @@ const DatetoString = (stdate) => {
 const DateString = DatetoString(date);
 ---
 <div class="card">
-	<a href={base +"/" + slug} class="text-4xl border-b border-primary">{title}</a>
-  <div class="flex flex-row text-white-rock-300 text-xl">
+	<a href={base +"/" + slug} class="text-primary text-4xl border-b-secondary">{title}</a>
+  <div class="flex flex-row  text-xl">
     <Icon name="ic:baseline-calendar-month" class=" w-max p-0 mb-0 color-secondary" />
     <span>{DateString}</span>
 	{tagList.length > 0 && (
