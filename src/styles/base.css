@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant dark (&:where(.darkmode, .darkmode *));
 @theme {
 	--font-main: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
 		"Hiragino Sans", "BIZ UDPGothic", Meiryo, sans-serif;
