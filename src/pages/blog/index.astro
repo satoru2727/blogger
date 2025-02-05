@@ -1,0 +1,21 @@
+---
+import Layout from '../../layouts/Layout.astro
+import Header from '../../components/Header.astro
+import Footer from '../../components/Footer.astro
+import { getCollection} from 'astro:content';
+const allBlogPosts = await getCollection("blog");
+import Card from '../../components/Card.astro
+---
+<Layout>
+  <Header />
+  <main>
+    <h1>Blog</h1>
+    <section>
+	    <ul>
+      {allBlogPosts.map((post) => (
+       			<li><Card title={post.data.title} slug={post.id} date={post.data.updatedAt ?? post.data.publishedAt} base="/blog" tags={post.data.tag} /></li>
+      ))}
+	    </ul>
+    </section>
+  </main>
+  <Footer />
