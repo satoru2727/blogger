@@ -11,10 +11,17 @@ import playformCompress from "@playform/compress";
 
 import tailwindcss from "@tailwindcss/vite";
 
-// https://astro.build/config
+import remarkCallout from "@r4ai/remark-callout";
 export default defineConfig({
 	integrations: [mdx(), sitemap(), icon(), playformCompress()],
 	vite: {
 		plugins: [tailwindcss()],
 	},
+	markdown: {
+    // ...
+    remarkPlugins: [
+      // ...
+      remarkCallout,
+    ],
+  },
 });
