@@ -3,7 +3,12 @@
 @theme {
 	--font-main: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
 		"Hiragino Sans", "BIZ UDPGothic", Meiryo, sans-serif;
-	--color-*: initial;
+	--color-primary: initial;
+	--color-secondary: initial;
+	--color-back: initial;
+	--color-back-dark: initial;
+	--color-text: initial;
+	--color-text-dark: initial;
 	--color-primary: #4559A3;
 	--color-secondary: #A38F45;
 	--color-back: #F4F5F7;
