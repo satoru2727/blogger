@@ -9,8 +9,26 @@ export async function getStaticPaths() {
 		props: { post },
 	}));
 }
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": post.data.title,
+  "url": Astro.url.toString(),
+  "keywords": post.data.tag,
+  "datePublished": new Date(post.data.publishedAt).toISOString(),
+  "publisher": {
+    "@type": "Organization",
+    "name": "satoru.work",
+    "url": "https://satoru.work"
+  },
+  ...(post.data.updatedAt && {
+    "dateModified": new Date(post.data.updatedAt).toISOString()
+  })
+};
+
+const structuredData = `<script type="application/ld+json">${JSON.stringify(jsonLd, null, 2)}</script>`;
 const { post } = Astro.props;
-const meta = `<title>${post.data.title}</title>`;
+const meta = `<title>${post.data.title}</title> ${structuredData}`;
 const { Content } = await render(post);
 const DatetoString = (stdate) => {
 	const date = new Date(stdate);
