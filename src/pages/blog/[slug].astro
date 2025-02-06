@@ -34,8 +34,9 @@ import tocbot from "tocbot";
     			</div>
 				)}
 			<div class="mx-2">
+				<span class="block me-2 px-2.5 py-0.5 rounded-full text-white bg-primary">Tags</span>
 				{post.data.tag.map((tag) => (
-				<a href={"/blog/tags/"+ tag} class="text-primary me-2 px-2.5 py-0.5 rounded-full">#{tag}</a>
+				<a href={"/blog/tags/"+ tag} class="text-primary me-2 px-2.5 py-0.5 rounded-full block">#{tag}</a>
 				))}
 			</div>
 		</div>
