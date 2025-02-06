@@ -16,8 +16,9 @@ export async function getStaticPaths() {
 }
 const { tag } = Astro.props;
 const posts = await getCollection("blog", ({ data }) => data.tag.includes(tag));
+const meta = `<title>Posts tagged with ${tag}</title>`;
 ---
-<Layout>
+<Layout meta={meta}>
 	<Header />
 	<main>
 		<h1>Posts tagged with {tag}</h1>
