@@ -14,6 +14,7 @@ import tailwindcss from "@tailwindcss/vite";
 import remarkCallout from "@r4ai/remark-callout";
 import playformInline from "@playform/inline";
 export default defineConfig({
+	site:"https://satoru.work",
     integrations: [mdx(), sitemap(), icon(), playformCompress(), playformInline()],
     vite: {
         plugins: [tailwindcss()],

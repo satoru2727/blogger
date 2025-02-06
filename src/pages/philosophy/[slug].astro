@@ -9,6 +9,7 @@ export async function getStaticPaths() {
 		props: { post },
 	}));
 }
+const { post } = Astro.props;
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -27,7 +28,6 @@ const jsonLd = {
 };
 
 const structuredData = `<script type="application/ld+json">${JSON.stringify(jsonLd, null, 2)}</script>`;
-const { post } = Astro.props;
 const meta = `<title>${post.data.title}</title>${structuredData}`;
 const { Content } = await render(post);
 const DatetoString = (stdate) => {
