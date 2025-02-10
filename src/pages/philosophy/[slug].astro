@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import Header from "../../components/Header.astro";
+import Image from "../../components/Image.astro";
 import Layout from "../../layouts/Layout.astro";
 export async function getStaticPaths() {
 	const allBlogPosts = await getCollection("philosophy");
@@ -11,20 +12,20 @@ export async function getStaticPaths() {
 }
 const { post } = Astro.props;
 const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": post.data.title,
-  "url": Astro.url.toString(),
-  "keywords": post.data.tag,
-  "datePublished": new Date(post.data.publishedAt).toISOString(),
-  "publisher": {
-    "@type": "Organization",
-    "name": "satoru.work",
-    "url": "https://satoru.work"
-  },
-  ...(post.data.updatedAt && {
-    "dateModified": new Date(post.data.updatedAt).toISOString()
-  })
+	"@context": "https://schema.org",
+	"@type": "BlogPosting",
+	headline: post.data.title,
+	url: Astro.url.toString(),
+	keywords: post.data.tag,
+	datePublished: new Date(post.data.publishedAt).toISOString(),
+	publisher: {
+		"@type": "Organization",
+		name: "satoru.work",
+		url: "https://satoru.work",
+	},
+	...(post.data.updatedAt && {
+		dateModified: new Date(post.data.updatedAt).toISOString(),
+	}),
 };
 
 const structuredData = `<script type="application/ld+json">${JSON.stringify(jsonLd, null, 2)}</script>`;
@@ -61,7 +62,7 @@ import tocbot from "tocbot";
 		<div class="flex flex-col lg:flex-row-reverse w-full">
 				<div class="js-toc w-full lg:w-1/4"></div>
 				<article id="main-content" class="prose w-full md:w-4/5 md:ml-8 md:mr-auto js-toc-content">
-				<Content />
+					<Content component={{img:Image}}/>
 				</article>
 		</div>
 <script>
