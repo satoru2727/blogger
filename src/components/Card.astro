@@ -2,26 +2,26 @@
 import { Icon } from "astro-icon/components";
 const { title, date, slug, tags, base } = Astro.props;
 const tagList = tags.slice(0, 3);
-const DatetoString = (stdate) => {
-	const date = new Date(stdate);
-	return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
+const DatetoString = (stdate: string) => {
+    const date = new Date(stdate);
+    return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
 };
 const DateString = DatetoString(date);
 ---
 <div class="card">
-	<a href={base +"/" + slug} class="text-primary text-4xl border-b-secondary">{title}</a>
+    <a href={base +"/" + slug} class="text-primary text-4xl border-b-secondary">{title}</a>
   <div class="flex flex-row  text-xl">
     <Icon name="ic:baseline-calendar-month" class=" w-max p-0 mb-0 color-primary" />
     <span>{DateString}</span>
-	{tagList.length > 0 && (
-		<div class="flex flex-row">
-			{tagList.map((tag) => (
-				<div class="flex flex-row">
-					<Icon name="ic:baseline-label" class="w-max p-0 mb-0 color-secondary" />
-					<a href={`${base}/${tag}`}>{tag}</span>
-				</div>
-			))}
-		</div>
-		)}
+    {tagList.length > 0 && (
+        <div class="flex flex-row">
+            {tagList.map((tag:string) => (
+                <div class="flex flex-row">
+                    <Icon name="ic:baseline-label" class="w-max p-0 mb-0 color-secondary" />
+                    <a href={`${base}/${tag}`}>{tag}</a>
+                </div>
+            ))}
+        </div>
+        )}
   </div>
-	</div>
+    </div>
