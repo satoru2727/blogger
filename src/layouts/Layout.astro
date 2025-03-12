@@ -1,5 +1,9 @@
 ---
-const { meta } = Astro.props;
+interface Props {
+  meta: string;
+}
+
+const { meta } = Astro.props as Props;
 import "../styles/base.css";
 ---
 <!doctype html>

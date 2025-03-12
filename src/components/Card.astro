@@ -1,6 +1,15 @@
 ---
 import { Icon } from "astro-icon/components";
-const { title, date, slug, tags, base } = Astro.props;
+
+interface Props {
+  title: string;
+  date: string;
+  slug: string;
+  tags: string[];
+  base: string;
+}
+
+const { title, date, slug, tags, base } = Astro.props as Props;
 const tagList = tags.slice(0, 3);
 const DatetoString = (stdate: string) => {
     const date = new Date(stdate);
