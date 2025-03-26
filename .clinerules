@@ -1,11 +1,44 @@
+# Project Details
+
+## Project Name
+
+blogger
+
+## Description
+
+This is a blog website built with Astro. It features two content collections: `blog` and `philosophy`. The site uses MDX for content creation and includes features like sitemap generation, icon support, and Tailwind CSS for styling.
+
+## Directory Structure
+
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── layouts/
+│   │   └── Layout.astro
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
+
+## Important Files
+
+*   `astro.config.mjs`: Astro configuration file
+*   `package.json`: npm package configuration file
+*   `src/content.config.ts`: Content configuration file
+*   `src/pages/`: Directory for defining pages
+*   `src/components/`: Directory for defining components
+*   `src/layouts/`: Directory for defining layouts
+*   `article/`: Directory for storing articles
+
 # Cline Rules
 
 This document outlines the rules Cline should follow when working with this project.
 
 ## Git Workflow
 
-- When modifying files, create a new branch and merge it to main when complete
-- Use meaningful branch names that reflect the task (e.g., `feature/new-blog-layout`, `fix/header-styling`)
+- When modifying files, commit directly to the main branch
 - Commit messages should be concise and descriptive
 
 ## Code Style
