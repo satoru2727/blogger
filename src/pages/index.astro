@@ -5,8 +5,7 @@ import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
 const meta = "<title>satoru.work</title>";
-const allBlogPosts = await getCollection("blog");
-const allPhilosophyPosts = await getCollection("philosophy");
+const allPosts = await getCollection("posts");
 ---
 <Layout meta={meta}>
 	<Header />
@@ -22,26 +21,17 @@ const allPhilosophyPosts = await getCollection("philosophy");
 						<a href="/about" class="text-2xl">About</a>
 					</li>
 					<li class="md:mr-4">
-						<a href="/blog" class="text-2xl">Blog</a>
-					</li>
-					<li class="md:mr-4">
-					<a href="/philosophy" class="text-2xl">Philosophy</a>
+						<a href="/posts" class="text-2xl">Posts</a>
 					</li>
 				</ul>
 			</nav>
 		</div>
 	</div>
 	<div class="item-center w-full md:w-4/5 md:ml-8 md:mr-auto mx-auto">
-	<h2>Blog</h2>
+	<h2>Posts</h2>
 	<ul>
-		{allBlogPosts.map((post) => (
-		<li><Card title={post.data.title} slug={post.id} date={(post.data.updatedAt ?? post.data.publishedAt)?.toISOString()} base="/blog" tags={post.data.tag} /></li>
-		))}
-	</ul>
-	<h2>Philosophy</h2>
-	<ul>
-		{allPhilosophyPosts.map((post) => (
-		<li><Card title={post.data.title} slug={post.id} date={(post.data.updatedAt ?? post.data.publishedAt)?.toISOString()} base="/philosophy" tags={post.data.tag} /></li>
+		{allPosts.map((post) => (
+		<li><Card title={post.data.title} slug={post.id} date={(post.data.updatedAt ?? post.data.publishedAt)?.toISOString()} base="/posts" tags={post.data.tag} /></li>
 		))}
 	</div>
 	</main>

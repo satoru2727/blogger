@@ -1,0 +1,45 @@
+---
+import { getCollection } from "astro:content";
+import Card from "../../../components/Card.astro";
+import Footer from "../../../components/Footer.astro";
+import Header from "../../../components/Header.astro";
+import Layout from "../../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection("posts");
+  const tags = [...new Set(allPosts.flatMap((post) => post.data.tag))];
+  
+  return tags.map((tag) => {
+    const filteredPosts = allPosts.filter((post) => post.data.tag.includes(tag));
+    return {
+      params: { slug: tag },
+      props: { posts: filteredPosts, tag },
+    };
+  });
+}
+
+const { posts, tag } = Astro.props;
+const meta = `<title>Tag: ${tag}</title>`;
+---
+<Layout meta={meta}>
+  <Header />
+  <main>
+    <h1>Tag: #{tag}</h1>
+    <section>
+      <ul>
+        {posts.map((post) => (
+          <li>
+            <Card 
+              title={post.data.title} 
+              slug={post.id} 
+              date={post.data.updatedAt || post.data.publishedAt} 
+              base="/posts" 
+              tags={post.data.tag} 
+            />
+          </li>
+        ))}
+      </ul>
+    </section>
+  </main>
+  <Footer />
+</Layout>
