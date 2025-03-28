@@ -1,3 +1,10 @@
+# Tech Stack
+- Astro
+- MDX
+- Tailwind CSS
+- Pagefind
+- Biome
+
 # Project Details
 
 ## Project Name
@@ -44,7 +51,7 @@ This document outlines the rules Cline should follow when working with this proj
 ## Code Style
 
 - Write comments in Japanese
-- Run `bunx @biomejs/biome check --apply .` to ensure consistent code style
+- Run `bun run norika` to ensure consistent code style
 
 ## Content Management
 
