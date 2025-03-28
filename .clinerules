@@ -13,7 +13,7 @@ blogger
 
 ## Description
 
-This is a blog website built with Astro. It features two content collections: `blog` and `philosophy`. The site uses MDX for content creation and includes features like sitemap generation, icon support, and Tailwind CSS for styling.
+This is a blog website built with Astro. It features one content collections: `posts`. The site uses MDX for content creation and includes features like sitemap generation, icon support, and Tailwind CSS for styling.
 
 ## Directory Structure
 
@@ -55,11 +55,10 @@ This document outlines the rules Cline should follow when working with this proj
 
 ## Content Management
 
-- All blog content should be stored in the appropriate directory (article/blog/ or article/philosophy/)
-- Image assets should be optimized before adding to the project
+- All blog content should be stored in the appropriate directory (article/post/)
 - MDX files should include proper frontmatter with required metadata
 
-## Development Practices
+##Development Practices
 
 - Always run tests before submitting changes
 - Document API changes in the relevant documentation
