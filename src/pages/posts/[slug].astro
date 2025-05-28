@@ -3,6 +3,7 @@ import { getCollection, render } from "astro:content";
 import Header from "../../components/Header.astro";
 import Image from "../../components/Image.astro";
 import Layout from "../../layouts/Layout.astro";
+import { DatetoString } from "../../../utils/dateUtils.ts";
 export async function getStaticPaths() {
 	const allPosts = await getCollection("posts");
 	return allPosts.map((post) => ({
@@ -31,10 +32,6 @@ const jsonLd = {
 const structuredData = `<script type="application/ld+json">${JSON.stringify(jsonLd, null, 2)}</script>`;
 const meta = `<title>${post.data.title}</title> ${structuredData}`;
 const { Content } = await render(post);
-const DatetoString = (stdate) => {
-	const date = new Date(stdate);
-	return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
-};
 import tocbot from "tocbot";
 ---
 <Layout meta={meta}>
