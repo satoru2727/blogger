@@ -4,7 +4,7 @@
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "astro dev",
-		"build": "astro build && bunx pagefind --site dist",
+		"build": "astro build && pnpm dlx pagefind --site dist",
 		"preview": "astro preview",
 		"astro": "astro",
 		"norika": "biome check --write ./src",
