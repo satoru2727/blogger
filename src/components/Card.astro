@@ -2,18 +2,18 @@
 import { Icon } from "astro-icon/components";
 
 interface Props {
-  title: string;
-  date: string;
-  slug: string;
-  tags: string[];
-  base: string;
+	title: string;
+	date: string;
+	slug: string;
+	tags: string[];
+	base: string;
 }
 
 const { title, date, slug, tags, base } = Astro.props as Props;
 const tagList = tags.slice(0, 3);
 const DatetoString = (stdate: string) => {
-    const date = new Date(stdate);
-    return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
+	const date = new Date(stdate);
+	return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
 };
 const DateString = DatetoString(date);
 ---
