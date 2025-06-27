@@ -7,7 +7,7 @@
 		"build": "astro build && pnpm dlx pagefind --site dist",
 		"preview": "astro preview",
 		"astro": "astro",
-		"norika": "biome check --write ./src",
+		"norika": "biome check --write --unsafe ./src",
 		"prepare": "husky install",
 		"lint:text": "textlint article/posts/*.mdx"
 	},
