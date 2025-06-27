@@ -1,17 +1,21 @@
 ---
 import { Image } from "astro:assets";
+
+interface Props {
+	src: ImageMetadata;
+	alt: string;
+	title?: string;
+}
+
 const { title, src, alt } = Astro.props;
 ---
+---
 
-<figure class='w-fit'>
-  <Image src={src} alt={alt} loading="lazy" />
-  {
-    /* eslint-disable astro/no-set-html-directive */
-    title && (
-      <figcaption class='mt-4 text-center text-sm text-gray-700 dark:text-gray-300 md:mt-2'>
-        <Fragment set:html={title} />
-      </figcaption>
-    )
-    /* eslint-enable astro/no-set-html-directive */
-  }
+<figure class="w-fit">
+	<Image src={src} alt={alt} loading="lazy" />
+	{title && (
+		<figcaption class="mt-4 text-center text-sm text-gray-700 dark:text-gray-300 md:mt-2">
+			<span>{title}</span>
+		</figcaption>
+	)}
 </figure>

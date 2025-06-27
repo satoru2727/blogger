@@ -1,9 +1,5 @@
 ---
 import { getCollection } from "astro:content";
-import Card from "../../../components/Card.astro";
-import Footer from "../../../components/Footer.astro";
-import Header from "../../../components/Header.astro";
-import Layout from "../../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
 	const allPosts = await getCollection("posts");
@@ -21,7 +17,7 @@ export async function getStaticPaths() {
 }
 
 const { posts, tag } = Astro.props;
-const meta = `<title>Tag: ${tag}</title>`;
+const _meta = `<title>Tag: ${tag}</title>`;
 ---
 <Layout meta={meta}>
   <Header />
