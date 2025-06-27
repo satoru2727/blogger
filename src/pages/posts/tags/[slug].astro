@@ -6,16 +6,18 @@ import Header from "../../../components/Header.astro";
 import Layout from "../../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
-  const allPosts = await getCollection("posts");
-  const tags = [...new Set(allPosts.flatMap((post) => post.data.tag))];
-  
-  return tags.map((tag) => {
-    const filteredPosts = allPosts.filter((post) => post.data.tag.includes(tag));
-    return {
-      params: { slug: tag },
-      props: { posts: filteredPosts, tag },
-    };
-  });
+	const allPosts = await getCollection("posts");
+	const tags = [...new Set(allPosts.flatMap((post) => post.data.tag))];
+
+	return tags.map((tag) => {
+		const filteredPosts = allPosts.filter((post) =>
+			post.data.tag.includes(tag),
+		);
+		return {
+			params: { slug: tag },
+			props: { posts: filteredPosts, tag },
+		};
+	});
 }
 
 const { posts, tag } = Astro.props;
