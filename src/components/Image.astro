@@ -1,4 +1,5 @@
----import { Image } from "astro:assets";
+---
+import { Image } from "astro:assets";
 
 interface Props {
 	src: ImageMetadata;
@@ -8,8 +9,8 @@ interface Props {
 
 const { title, src, alt } = Astro.props;
 ---
+---
 
-<<<<<<< HEAD
 <figure class="w-fit">
 	<Image src={src} alt={alt} loading="lazy" />
 	{title && (
@@ -17,5 +18,4 @@ const { title, src, alt } = Astro.props;
 			<span>{title}</span>
 		</figcaption>
 	)}
-
 </figure>
